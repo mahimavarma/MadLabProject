@@ -1,0 +1,64 @@
+/* login.css */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .login-form {
+    background: white;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .login-form h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .login-form .form-control {
+    margin-bottom: 1.2rem;
+    height: 45px;
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 0 12px;
+    border: 1px solid #ccc;
+  }
+  
+  .login-form .btn-primary {
+    background-color: #0b57d0;
+    border: none;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    color: white;
+  }
+  
+  .login-form .btn-primary:hover {
+    background-color: #0846aa;
+  }
+  
+  .login-form .forgot-password {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 14px;
+  }
+  
+  .login-form a {
+    color: #0b57d0;
+    text-decoration: none;
+  }
+  
+  .login-form a:hover {
+    text-decoration: underline;
+  }
+  
