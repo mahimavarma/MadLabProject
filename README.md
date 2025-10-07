@@ -200,7 +200,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Authors
 
-- **Mahina Varma** - *Initial work* - [mahimavarma](https://github.com/mahimavarma)
+- **Mahima Varma**
+- **Ayush Tiwari**
+- **Sakshi Said**
 
 ## 🙏 Acknowledgments
 
