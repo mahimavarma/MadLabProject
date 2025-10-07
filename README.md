@@ -2,7 +2,7 @@
 
 A modern, responsive web application that helps users discover and explore recipes from around the world. Built with React.js, Redux, Firebase, and Material-UI, this application provides a seamless recipe searching experience with user authentication and favorites management.
 
-![App Screenshot](./src/photos/screenshot.png)
+![App Screenshot](./src/photos/screenshotUI.png)
 
 ## ✨ Features
 
