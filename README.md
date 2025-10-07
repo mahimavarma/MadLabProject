@@ -2,7 +2,7 @@
 
 A modern, responsive web application that helps users discover and explore recipes from around the world. Built with React.js, Redux, Firebase, and Material-UI, this application provides a seamless recipe searching experience with user authentication and favorites management.
 
-![Preview](https://github.com/Jupiter-Github/Recipe-Finder/assets/165056474/dfa3d7a2-e5be-4fae-9eff-771a32972d76)
+![App Screenshot](./src/photos/screenshot.png)
 
 ## ✨ Features
 
