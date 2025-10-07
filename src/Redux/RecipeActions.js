@@ -5,6 +5,7 @@ import {
   ADD_TO_FAVOURITE,
   REMOVE_FROM_FAVOURITE,
   SET_SEARCH_ITEM,
+  CLEAR_RECIPE_DATA,
 } from "./RecipeTypes";
 
 const setRecipeData = (data) => {
@@ -48,6 +49,12 @@ const setSearchItem = (searchItem) => {
   };
 };
 
+const clearRecipeData = () => {
+  return {
+    type: CLEAR_RECIPE_DATA,
+  };
+};
+
 const fetchRecipe = (item) => {
   return (dispatch) => {
     dispatch(sendApiRequest());
@@ -81,4 +88,5 @@ export {
   removeFromFavourite,
   sendApiRequest,
   setSearchItem,
+  clearRecipeData,
 };

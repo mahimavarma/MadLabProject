@@ -4,7 +4,6 @@ import {
   Grid,
   Card,
   CardContent,
-  Container,
   CardMedia,
   Typography,
   Button,
@@ -17,7 +16,7 @@ import { addToFavourite } from "../Redux/RecipeActions";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
 import Alert from "./Alert";
-import SearchListAlert from "./SearchListAlert";
+import SearchList from "./SearchList";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -93,12 +92,7 @@ const Home = () => {
               ))}
             </Grid>
           ) : (
-            <Container maxWidth="sm">
-              <Typography variant="h4" align="center" color="textSecondary">
-                Nothing to show, please search something!
-              </Typography>
-              <SearchListAlert />
-            </Container>
+            <SearchList />
           )}
         </Box>
       )}

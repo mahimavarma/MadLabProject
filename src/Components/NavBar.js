@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import { Restaurant, Home, Favorite, Search } from "@mui/icons-material";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchRecipe } from "../Redux/RecipeActions";
+import { fetchRecipe, clearRecipeData } from "../Redux/RecipeActions";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase"; 
 
@@ -118,9 +118,12 @@ const NavBar = () => {
             />
           </SearchDiv>
 
-          <IconButton color="inherit" onClick={() => window.location.reload()}>
-  <Home />
-</IconButton>
+          <IconButton color="inherit" onClick={() => {
+            dispatch(clearRecipeData());
+            navigate("/home");
+          }}>
+            <Home />
+          </IconButton>
 
           <Link to="/Favourite" style={{ color: "inherit" }}>
             <IconButton color="inherit">

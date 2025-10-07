@@ -6,6 +6,7 @@ import { getDatabase, ref, set } from "firebase/database";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Register.css";
+import logo1 from "../photos/logo2.png"
 import { Link, useNavigate } from "react-router-dom";
 
 function Register() {
@@ -21,7 +22,7 @@ function Register() {
     e.preventDefault();
 
     if (buttonText === "Login") {
-      navigate("/");
+      navigate("/login");
       return;
     }
 
@@ -47,7 +48,7 @@ function Register() {
         setButtonText("Login");
 
         setTimeout(() => {
-          navigate("/");
+          navigate("/login");
         }, 400);
       } catch (error) {
         console.error("Registration error:", error);
@@ -65,7 +66,12 @@ function Register() {
     <div className="register-container">
       <ToastContainer />
       <form className="register-form" onSubmit={handleRegister}>
-        <h3>Sign Up</h3>
+      <img 
+        src={logo1} 
+        alt="Login Illustration" 
+        className="login-image" 
+      /> 
+        <h2>Create an Account</h2>
 
         <div className="mb-3">
           <label>Email address</label>
@@ -98,7 +104,7 @@ function Register() {
         </div>
 
         <p className="forgot-password text-right">
-          Already registered? <Link to="/">Login</Link>
+          Already have an account? <Link to="/login">Log In</Link>
         </p>
       </form>
     </div>

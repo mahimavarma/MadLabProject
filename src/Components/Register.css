@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f2f5;
+    background-color: #fff2df;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
@@ -17,7 +17,7 @@
     max-width: 400px;
   }
   
-  .register-form h3 {
+  .register-form h2 {
     text-align: center;
     margin-bottom: 1.5rem;
     font-weight: 600;
@@ -34,7 +34,7 @@
   }
   
   .register-form .btn-primary {
-    background-color: #0b57d0;
+    background-color: #ff9700;
     border: none;
     height: 45px;
     font-size: 16px;
@@ -45,7 +45,7 @@
   }
   
   .register-form .btn-primary:hover {
-    background-color: #0846aa;
+    background-color: #ff9700;
   }
   
   .register-form .forgot-password {
@@ -110,5 +110,14 @@
     border-color: #a0bde6;
     cursor: not-allowed;
     box-shadow: none;
+  }
+  .login-image {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin: 20px auto;
+    display: block;
   }
   

@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import logo from '../photos/logo1.png'
 import "./login.css";
 
 function Login() {
@@ -29,7 +30,12 @@ function Login() {
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
-        <h3>Login</h3>
+      <img 
+        src={logo} 
+        alt="Login Illustration" 
+        className="login-image" 
+      />
+        <h2>Welcome Back!</h2>
 
         <div className="mb-3">
           <label>Email address</label>
@@ -57,12 +63,12 @@ function Login() {
 
         <div className="d-grid">
           <button type="submit" className="btn btn-primary">
-            Submit
+            Log In
           </button>
         </div>
 
         <p className="forgot-password text-right">
-          New user? <Link to="/register">Register Here</Link>
+          Dont have an account?<Link to="/register">Sign Up</Link>
         </p>
       </form>
     </div>

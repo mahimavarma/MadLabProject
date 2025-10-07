@@ -5,6 +5,7 @@ import {
   SET_RECIPE_DATA,
   SET_RECIPE_ITEM,
   SET_SEARCH_ITEM,
+  CLEAR_RECIPE_DATA,
 } from "./RecipeTypes";
 
 const initialState = {
@@ -59,6 +60,13 @@ const RecipeReducer = (state = initialState, action) => {
       return {
         ...state,
         searchItem: action.payload,
+      };
+    case CLEAR_RECIPE_DATA:
+      return {
+        ...state,
+        allRecipeData: [],
+        searchItem: "",
+        loading: false,
       };
 
     default:

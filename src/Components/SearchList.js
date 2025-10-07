@@ -3,7 +3,6 @@ import { Box, Grid, Chip, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { fetchRecipe, setSearchItem } from "../Redux/RecipeActions";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 const SearchList = () => {
   const searchList = [
     "carrot",
@@ -135,7 +134,6 @@ const SearchList = () => {
     "salami",
     "ribs",
   ];
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const theme = createTheme({
     breakpoints: {
@@ -152,7 +150,7 @@ const SearchList = () => {
   const handleClick = (value) => {
     dispatch(setSearchItem(value));
     dispatch(fetchRecipe(value));
-    navigate("/");
+    // No need to navigate since we're already on home page
   };
   return (
     <>
