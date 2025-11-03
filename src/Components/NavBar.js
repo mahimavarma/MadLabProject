@@ -12,7 +12,7 @@ import {
   Badge,
   Button,
 } from "@mui/material";
-import { Restaurant, Home, Favorite, Search } from "@mui/icons-material";
+import { Restaurant, Home, Favorite, Search, Group } from "@mui/icons-material";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchRecipe, clearRecipeData } from "../Redux/RecipeActions";
 import { signOut } from "firebase/auth";
@@ -124,6 +124,12 @@ const NavBar = () => {
           }}>
             <Home />
           </IconButton>
+
+          <Link to="/Community" style={{ color: "inherit" }}>
+            <IconButton color="inherit">
+              <Group />
+            </IconButton>
+          </Link>
 
           <Link to="/Favourite" style={{ color: "inherit" }}>
             <IconButton color="inherit">

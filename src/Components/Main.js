@@ -5,6 +5,7 @@ import Home from "./Home";
 import RecipeInstruction from "./RecipeInstruction";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Favourite from "./Favourite";
+import Community from "./Community";
 import { ToastContainer } from "react-toastify";
 import Login from "./login";
 import Register from "./register";
@@ -38,6 +39,11 @@ const Main = () => {
         <Route path="/Favourite" element={
           <ProtectedRoute user={currentUser}>
             <Favourite />
+          </ProtectedRoute>
+        } />
+        <Route path="/Community" element={
+          <ProtectedRoute user={currentUser}>
+            <Community />
           </ProtectedRoute>
         } />
       </Routes>
