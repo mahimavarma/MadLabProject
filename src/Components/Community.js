@@ -187,6 +187,7 @@ const Community = () => {
   const [commentDialogOpen, setCommentDialogOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
   const [newComment, setNewComment] = useState('');
+  const [recipeDialogOpen, setRecipeDialogOpen] = useState(false);
 
   // Fetch all posts from Firestore and combine with dummy posts
   const fetchPosts = async () => {
@@ -696,7 +697,12 @@ const Community = () => {
                   <Typography variant="body2" color="textSecondary" paragraph>
                     Juicy homemade burger with special sauce
                   </Typography>
-                  <Button variant="contained" size="small" fullWidth>
+                  <Button 
+                    variant="contained" 
+                    size="small" 
+                    fullWidth
+                    onClick={() => setRecipeDialogOpen(true)}
+                  >
                     Try This Recipe
                   </Button>
                 </Box>
@@ -867,6 +873,102 @@ const Community = () => {
             </IconButton>
           </Box>
         </DialogContent>
+      </Dialog>
+
+      {/* Recipe of the Day Dialog */}
+      <Dialog 
+        open={recipeDialogOpen} 
+        onClose={() => setRecipeDialogOpen(false)}
+        maxWidth="md"
+        fullWidth
+      >
+        <DialogTitle sx={{ pb: 1 }}>
+          <Typography variant="h5" component="div" fontWeight="bold">
+            🍔 Classic Beef Burger Recipe
+          </Typography>
+        </DialogTitle>
+        <DialogContent>
+          <Box sx={{ mb: 3 }}>
+            <img 
+              src="https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+              alt="Classic Beef Burger"
+              style={{ 
+                width: '100%', 
+                height: 250, 
+                objectFit: 'cover', 
+                borderRadius: 12,
+                marginBottom: 16
+              }}
+            />
+          </Box>
+
+          <Typography variant="h6" gutterBottom color="primary" fontWeight="bold">
+            📝 Ingredients
+          </Typography>
+          <Box sx={{ mb: 3, pl: 2 }}>
+            <Typography variant="body1" paragraph>
+              • 1 lb ground beef (80/20 blend)<br/>
+              • 4 hamburger buns<br/>
+              • 4 slices of cheese (cheddar or American)<br/>
+              • 1 large onion, sliced<br/>
+              • 2 tomatoes, sliced<br/>
+              • Lettuce leaves<br/>
+              • 2 tbsp mayonnaise<br/>
+              • 2 tbsp ketchup<br/>
+              • 1 tbsp mustard<br/>
+              • Salt and black pepper to taste<br/>
+              • 1 tbsp vegetable oil
+            </Typography>
+          </Box>
+
+          <Typography variant="h6" gutterBottom color="primary" fontWeight="bold">
+            👨‍🍳 Instructions
+          </Typography>
+          <Box sx={{ pl: 2 }}>
+            <Typography variant="body1" paragraph>
+              <strong>Step 1:</strong> Divide ground beef into 4 equal portions and shape into patties. Season both sides with salt and pepper.
+            </Typography>
+            <Typography variant="body1" paragraph>
+              <strong>Step 2:</strong> Heat vegetable oil in a large skillet or grill pan over medium-high heat.
+            </Typography>
+            <Typography variant="body1" paragraph>
+              <strong>Step 3:</strong> Cook burger patties for 3-4 minutes on the first side, then flip and cook for another 3-4 minutes for medium doneness.
+            </Typography>
+            <Typography variant="body1" paragraph>
+              <strong>Step 4:</strong> In the last minute of cooking, place cheese slices on top of patties to melt.
+            </Typography>
+            <Typography variant="body1" paragraph>
+              <strong>Step 5:</strong> While patties cook, lightly toast the hamburger buns in a toaster or dry skillet.
+            </Typography>
+            <Typography variant="body1" paragraph>
+              <strong>Step 6:</strong> Assemble burgers: spread mayonnaise on bottom bun, add lettuce, tomato, burger patty with cheese, onion slices, and top with ketchup and mustard.
+            </Typography>
+            <Typography variant="body1" paragraph>
+              <strong>Step 7:</strong> Top with the other bun half and serve immediately with your favorite sides!
+            </Typography>
+          </Box>
+
+          <Box sx={{ mt: 3, p: 2, bgcolor: 'primary.light', borderRadius: 2 }}>
+            <Typography variant="body2" color="white">
+              <strong>💡 Chef's Tip:</strong> Let the meat rest for 2-3 minutes after cooking to retain juices. Don't press down on patties while cooking!
+            </Typography>
+          </Box>
+
+          <Box sx={{ mt: 2, display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+            <Chip label="Prep: 15 min" size="small" />
+            <Chip label="Cook: 10 min" size="small" />
+            <Chip label="Serves: 4" size="small" />
+            <Chip label="Difficulty: Easy" size="small" color="success" />
+          </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setRecipeDialogOpen(false)} color="primary">
+            Close
+          </Button>
+          <Button variant="contained" color="primary">
+            Save Recipe
+          </Button>
+        </DialogActions>
       </Dialog>
     </Box>
   );
